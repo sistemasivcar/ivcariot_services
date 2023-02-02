@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:    
+    
+    emqx:
+      container_name: emqx
+      image: emqx/emqx:4.3.2
+      restart: always
+      ports:
+        - ${EMQX_DASH_PORT}:18083
+      environment: 
+        EMQX_LISTENER__TCP__EXTERNAL__MAX_CONNECTIONS: 1000
+        EMQX_NAME: 'ivcariot'
+        EMQX_HOST: 127.0.0.1
+
