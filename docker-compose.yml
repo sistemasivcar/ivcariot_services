@@ -1,5 +1,13 @@
 version: '3.3'
 
+volumes:
+  vol-emqx-data:
+    name: foo-emqx-data
+  vol-emqx-etc:
+    name: foo-emqx-etc
+  vol-emqx-log:
+    name: foo-emqx-log
+
 services:    
     
     emqx:
@@ -12,4 +20,8 @@ services:
         EMQX_LISTENER__TCP__EXTERNAL__MAX_CONNECTIONS: 1000
         EMQX_NAME: 'ivcariot'
         EMQX_HOST: 127.0.0.1
+      volumes:
+        - vol-emqx-data:/opt/emqx/data
+        - vol-emqx-etc:/opt/emqx/etc
+        - vol-emqx-log:/opt/emqx/log
 
