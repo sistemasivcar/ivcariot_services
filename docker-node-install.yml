@@ -5,7 +5,7 @@ services:
 
   node:
     container_name: node
-    image: "node:14.15"
+    image: "node:14"
     working_dir: /home/node/app
     volumes:
       - ./app/:/home/node/app

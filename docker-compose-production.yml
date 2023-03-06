@@ -12,7 +12,7 @@ services:
 
     node:
       container_name: node
-      image: node:14.15
+      image: node:14
       #restart: always
       working_dir: /home/node/app
       ports: 
@@ -24,7 +24,7 @@ services:
         - mongo
       volumes: 
         - ./app/:/home/node/app
-      command: sh -c "npm run build npm run start"
+      command: sh -c "echo 'delaying 30 seconds' && sleep 30 && npm run start"
     
     mongo:
       container_name: mongo
