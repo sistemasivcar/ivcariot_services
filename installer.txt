@@ -1,0 +1,3 @@
+sudo apt-get update
+wget https://get.docker.com/
+mv ./index.html ./docker-installer.sh
