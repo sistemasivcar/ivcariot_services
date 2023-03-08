@@ -46,9 +46,8 @@ services:
       ports:
         - 18083:18083
         - 1883:1883
-        - 8883:8883
         - 8083:8083
-        - 8085:8081
+        - 8081:8081
 
       environment: 
         TZ: "${TZ}"
@@ -103,8 +102,6 @@ services:
 
       links:
         - mongo
-      extra_hosts:
-        - "localhost:192.168.68.103"
 
       volumes:
         - vol-emqx-data:/opt/emqx/data
