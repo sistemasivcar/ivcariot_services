@@ -100,6 +100,11 @@ services:
 
         EMQX_LOADED_PLUGINS: "emqx_recon,emqx_retainer,emqx_management,emqx_dashboard, emqx_auth_mongo"
 
+        # RETAINER
+        EMQX_RETAINER__STORAGE_TYPE: "disc"
+        # 1 semana duran los retained messages
+        EMQX_RETAINER__EXPIRY_INTERVAL: "168h"
+
       links:
         - mongo
 

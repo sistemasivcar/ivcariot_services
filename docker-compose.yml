@@ -50,7 +50,7 @@ services:
         EMQX_DASHBOARD__DEFAULT_USER__LOGIN: "${EMQX_DEFAULT_USER}"
         
         # MANAGMENT
-        EMQX_MANAGEMENT__DEFAULT_APPLICATION__SECRET: "${EMQX_DEFAULT_APPLICATION__SECRET}"
+        EMQX_MANAGEMENT__DEFAULT_APPLICATION__SECRET: "${EMQX_MANAGMENT_DEFAULT_APPLICATION__SECRET}"
 
         # MONGO CONNECTION
         EMQX_AUTH__MONGO__TYPE: single
@@ -81,6 +81,11 @@ services:
         EMQX_AUTH__MONGO__ACL_QUERY: "on"
         EMQX_AUTH__MONGO__ACL_QUERY__COLLECTION: "emqxauthrules"
         EMQX_AUTH__MONGO__ACL_QUERY__SELECTOR: "username=%u"
+        
+        # RETAINER
+        EMQX_RETAINER__STORAGE_TYPE: "disc"
+        EMQX_RETAINER__EXPIRY_INTERVAL: "168h"
+
 
         EMQX_LOADED_PLUGINS: "emqx_recon,emqx_retainer,emqx_management,emqx_dashboard, emqx_auth_mongo"
 
